@@ -1,0 +1,54 @@
+{
+   "action": {
+      "default_icon": {
+         "32": "icon-32-production.png"
+      },
+      "default_popup": "src/pages/popup/index.html"
+   },
+   "background": {
+      "service_worker": "service-worker-loader.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "assets/frame.ts-loader-CCVBNgqd.js" ],
+      "matches": [ "http://*/*", "https://*/*", "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "assets/disable_autoplay.ts-loader-C8Tgeayo.js" ],
+      "matches": [ "http://*/*", "https://*/*", "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "declarative_net_request": {
+      "rule_resources": [ {
+         "enabled": true,
+         "id": "iframe_ruleset",
+         "path": "src/rules.json"
+      } ]
+   },
+   "description": "DePIN for data collection",
+   "externally_connectable": {
+      "matches": [ "http://localhost:*/*", "https://datahive-dashboard-development.web.app/*", "https://datahive-dashboard-staging.web.app/*", "https://datahive-dashboard-production-non-store.web.app/*", "https://dashboard.datahive.xyz/*", "https://dashboard.datahive.ai/*" ]
+   },
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icon-128-production.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlOG8zqn4v0o7dliL116ccqY5eQHwlJvyg4Ytb9ug92MB6VCWPk0imn5BPG7KsNjuECvRnkG9Y6qo2VG8e949aribzf/1AjhlO2b8otermfADPA+E/8D1MmHUCAUOUJS498i+kc6hSThv9JxqkJhyaI0r76g0ZuC5ex1oWcwvKt9ToWt9qy/VMFtU23AofPB3r7xYeAYE2QAIAwsyVIYdUpQePntO+tRG0SHPoUtGhBKLL6/QTY3IrZO6nqTfUbvLwtKfimGh3BnvW/qYLFXZpm4GFWtW+64iz7npMgFSZOEBFfWRSdaB8kgCUN61856IrsPlhI8lXP0H0qMPvGQmRQIDAQAB",
+   "manifest_version": 3,
+   "name": "DataHive",
+   "permissions": [ "storage", "offscreen", "declarativeNetRequest", "system.cpu", "system.memory" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.2.4",
+   "version_name": "0.2.4",
+   "web_accessible_resources": [ {
+      "matches": [  ],
+      "resources": [ "icon-128-production.png", "icon-32-production.png" ],
+      "use_dynamic_url": false
+   }, {
+      "matches": [ "\u003Call_urls>", "http://*/*", "https://*/*" ],
+      "resources": [ "assets/index-zDGX7_eg.js", "assets/_sentry-release-injection-file-BetQGEEZ.js", "assets/messenger-Bd6yZOQZ.js", "assets/init-sQey_HaX.js", "assets/types-Oyjdt06n.js", "assets/frame.ts-C04SCy3L.js", "assets/disable_autoplay.ts-DyM3CaRx.js" ],
+      "use_dynamic_url": false
+   } ]
+}

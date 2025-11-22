@@ -1,0 +1,16 @@
+{
+  "name": "datahive-standalone",
+  "version": "1.0.0",
+  "description": "Standalone Node.js implementation of DataHive extension",
+  "main": "datahive.js",
+  "scripts": {
+    "start": "node datahive.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "js-yaml": "^4.1.1",
+    "puppeteer": "^24.31.0",
+    "winston": "^3.11.0"
+  }
+}
