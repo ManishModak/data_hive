@@ -1,16 +1,48 @@
 {
-  "name": "datahive-standalone",
+  "name": "datahive-worker",
   "version": "1.0.0",
-  "description": "Standalone Node.js implementation of DataHive extension",
+  "description": "DataHive job processing worker with Puppeteer scraping",
   "main": "datahive.js",
   "scripts": {
-    "start": "node datahive.js"
+    "start": "node datahive.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:integration": "jest tests/integration.test.js",
+    "demo": "node examples/tool-demo.js",
+    "demo:all": "node examples/all-tools-demo.js",
+    "demo:phase2": "node examples/phase2-demo.js",
+    "lint": "eslint src/ tests/"
   },
+  "keywords": [
+    "datahive",
+    "scraper",
+    "puppeteer",
+    "worker"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.0",
-    "dotenv": "^16.3.1",
-    "js-yaml": "^4.1.1",
-    "puppeteer": "^24.31.0",
-    "winston": "^3.11.0"
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "js-yaml": "^4.1.0",
+    "puppeteer": "^23.11.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "verbose": true
   }
 }
